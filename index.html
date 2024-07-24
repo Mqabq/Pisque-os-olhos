@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pisque os Olhos</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0a1f3d, #1e3c72);
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #mensagem {
+            font-size: 2.5rem;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+    <script>
+        setInterval(function() {
+            var mensagem = document.getElementById('mensagem');
+            if (mensagem.innerHTML === 'Pisque os olhos') {
+                mensagem.innerHTML = 'Isso faz bem para sua vista';
+            } else {
+                mensagem.innerHTML = 'Pisque os olhos';
+            }
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div id="mensagem">Pisque os olhos</div>
+</body>
+</html>
